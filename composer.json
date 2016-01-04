@@ -20,6 +20,9 @@
         }
     ],
     "license": "MIT",
+    "require": {
+ -        "guzzle/guzzle": "v3.*"
+ -    },
     "autoload": {
          "classmap": ["plivo.php"]
     }
