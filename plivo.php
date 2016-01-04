@@ -2,7 +2,7 @@
 
 namespace Plivo;
 
-use GuzzleHttp\Client;
+use Guzzle\Http\Client;
 
 class PlivoError extends \Exception {}
 
