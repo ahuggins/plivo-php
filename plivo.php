@@ -38,17 +38,17 @@ class RestAPI {
     private function request($method, $path, $params = array()) {
         $url = $this->api.rtrim($path, '/').'/';
 
-        $client = new Client([
+        $client = new Client(array(
             'base_uri' => $url,
-            'auth' => [$this->auth_id, $this->auth_token],
+            'auth' => array($this->auth_id, $this->auth_token),
             'http_errors' => false
-        ]);
+        ));
 
         if (!strcmp($method, "POST")) {
             $body = json_encode($params, JSON_FORCE_OBJECT);
             try {
                 $response = $client->post('', array(
-                'headers' => [ 'Content-type' => 'application/json'],
+                'headers' => array( 'Content-type' => 'application/json'),
                 'body'    => $body,
             ));
             } catch (ClientException $e) {
